@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 Feliz Cumpleaños Zharick 💖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="blue-background">
+
+  <!-- FASE 1 -->
+  <button id="startBtn">Click</button>
+
+  <div id="sunflower-container">
+    <img id="sunflower" src="img/sunflower.png" alt="girasol">
+    <div id="message">Feliz Cumpleaños Zharick</div>
+  </div>
+
+  <!-- FASE 2 -->
+  <div id="phase2">
+    <div id="emoji-container">
+      <div id="emoji">💌</div>
+      <div id="guide-text">Ábreme</div>
+    </div>
+
+    <div id="letter">
+      <div id="letter-content">
+        Hoy es un día especial para ti y si no lo es, es para mí, porque cumple una persona muy especial 💖 (tienes autismo) y espero disfrutes de las pocas horas de sueño de este pequeño gesto, te quiero mucho y pásala bien, ya nos veremos pronto, deberías dormir, en serio me preocupas, a este paso vas a colapsar, terminé de encariñarme contigo y solo me queda esperar.
+      </div>
+      <div id="ribbon">Ábreme</div>
+    </div>
+  </div>
+
+  <!-- PANTALLA DE JUEGO FASE 3 -->
+  <div id="gameScreen">
+    <h2>Preguntas de Verdadero o Falso sobre Zharick</h2>
+    <div id="score">Puntaje: 0</div>
+    <div id="questionContainer"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
