@@ -1,0 +1,237 @@
+@import url('https://fonts.cdnfonts.com/css/minecraft-4');
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Minecraft', sans-serif;
+  overflow: hidden;
+  transition: background 2s ease;
+}
+
+body.blue-background {
+  background: linear-gradient(to bottom, #1e3c72, #2a5298, #000000);
+}
+
+body.yellow-background {
+  background: linear-gradient(to right, #fff176, #ffeb3b);
+}
+
+body.red-background {
+  animation: pulseRed 2s infinite ease-in-out;
+}
+
+@keyframes pulseRed {
+  0% { background-color: #ff8a80; }
+  50% { background-color: #ff5252; }
+  100% { background-color: #ff8a80; }
+}
+
+/* BOTONES */
+#startBtn {
+  padding: 20px 40px;
+  font-size: 1.8rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: 'Cursive', serif;
+  z-index: 10;
+  background: white;
+  color: black;
+}
+
+/* GIRASOL FASE 1 */
+#sunflower-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 4s ease, opacity 4s ease;
+}
+
+#sunflower-container.animate-riseZoom {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(3);
+}
+
+#sunflower {
+  width: 140px;
+  height: auto;
+}
+
+#message {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 5px black;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.animate-fade { animation: fadeIn 2s forwards; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* FASE 2 */
+#phase2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+#phase2.show { opacity: 1; }
+
+#emoji-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#emoji {
+  font-size: 5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#emoji:hover { transform: scale(1.2); }
+
+#guide-text {
+  font-family: 'Cursive', serif;
+  font-size: 1.2rem;
+  color: #333;
+  font-style: italic;
+}
+
+#letter {
+  width: 300px;
+  height: 400px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  font-family: 'Cursive', serif;
+  position: relative;
+  overflow: hidden;
+  transform: scale(0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.6s ease;
+}
+
+#letter.open {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+#letter-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+#ribbon {
+  background: pink;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 0 0 12px 12px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* FASE 3 – Juego */
+#gameScreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;     
+  padding: 20px;
+  display: none;
+}
+
+#questionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#questionContainer p {
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#questionContainer button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Cursive', serif;
+  transition: transform 0.2s, background 0.3s;
+}
+
+#questionContainer button:active {
+  transform: scale(1.2);
+}
+
+#score {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Corazones flotantes */
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url('img/minecraft-heart.png') no-repeat center/contain;
+  pointer-events: none;
+  animation: floatHeart 4s linear infinite;
+}
+
+@keyframes floatHeart {
+  0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 1; }
+  50% { transform: translateY(-50px) scale(1.2) rotate(180deg); opacity: 0.8; }
+  100% { transform: translateY(-100px) scale(1) rotate(360deg); opacity: 0; }
+}
+ 
